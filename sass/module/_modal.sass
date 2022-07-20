@@ -1,0 +1,111 @@
+.modal
+  max-width: 688px
+  width: 100%
+  margin: 40px 0
+  display: inline-block
+  vertical-align: middle
+  cursor: default
+  text-align: left
+  white-space: normal
+  opacity: 0
+  visibility: hidden
+  transition-property: opacity, visibility
+  transition-duration: 0.36s
+  transition-timing-function: ease-in-out
+
+  &_open
+    visibility: visible
+    opacity: 100%
+
+  &__container
+    position: relative
+    background-color: #ffffff
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+    border-radius: 30px
+    padding: 20px 20px 45px
+
+    @media (max-width: 480px)
+      padding: 20px 13px 36px
+
+  &__title
+    font-weight: 700
+    font-size: 30px
+    line-height: 36px
+    text-align: center
+    color: #55c2ff
+    max-width: 400px
+    margin: 0 auto 20px
+
+    @media (max-width: 480px)
+      font-size: 22px
+      line-height: 27px
+      margin-bottom: 10px
+
+  &__person
+    display: flex
+    gap: 16px
+    padding: 0
+    margin: 0
+    border: none
+    margin-bottom: 27px
+
+    @media (max-width: 480px)
+      flex-direction: column
+      gap: 10px
+      margin-bottom: 20px
+
+  &__label
+    display: block
+    flex-grow: 1
+    font-family: 'IBM Plex Sans'
+    font-weight: 300
+    font-size: 12px
+    line-height: 16px
+    color: #858585
+
+  &__input
+    display: block
+    width: 100%
+    border: 1px solid #68b7ff
+    border-radius: 8px
+    height: 38px
+    padding: 0 10px
+    color: #000000
+    outline: none
+
+    &:hover
+      border-color: #1c88eb
+
+    &:focus
+      border-color: #68b7ff
+
+  &__btn
+    display: block
+    margin: 0 auto
+
+  &__close
+    position: absolute
+    right: 14px
+    top: 14px
+    border: none
+    background-color: transparent
+    line-height: 0
+    color: #55c2ff
+    transition: color 0.36s ease-in-out
+    outline: 2px solid transparent
+    outline-offset: -2px
+    border-radius: 50%
+
+    &:hover
+      outline-color: #1c88eb
+
+    &:focus
+      outline-color: #1c88eb
+
+    &:active
+      color: #1c88eb
+
+    @media (max-width: 480px)
+      right: 0
+      top: -2px
+      transform: translateY(-100%)

@@ -12,7 +12,7 @@
     <link rel="preload" href="fonts/ibm-plex-sans-v14-latin_cyrillic-300.woff2" type="font/woff2" as="font"
       crossorigin />
     <link rel="stylesheet" href="./css/index.css" />
-    <script defer src="./js/index.js"></script>
+    <script src="./js/index.js" type="module"></script>
   </head>
   <body>
     <header class="header">
@@ -37,15 +37,60 @@
     </header>
     <main>
       <section class="hero">
-        <div class="container">
+        <div class="container hero__container">
           <h1 class="hero__title">Crypto</h1>
           <p class="hero__subtitle">Ваш самый надежный сервис обмена криптовалюты</p>
-          <button class="hero__btn">Зарегистрироваться!</button>
+          <button class="btn-reg hero__btn">Зарегистрироваться!</button>
         </div>
       </section>
     </main>
-    <footer>
-
+    <div class="overlay">
+      <div class="modal">
+        <div class="modal__container">
+          <h2 class="modal__title">Мгновенная регистрация на платформе</h2>
+          <form class="modal__form">
+            <fieldset class="modal__person">
+              <label class="modal__label">Имя
+                <input type="text" class="modal__input" name="first_name" />
+              </label>
+              <label class="modal__label">Фамилия
+                <input type="text" class="modal__input" name="last_name" />
+              </label>
+              <label class="modal__label">Номер телефона
+                <input type="text" class="modal__input" name="phone" />
+              </label>
+            </fieldset>
+            <button class="btn-reg modal__btn" type="submit">Зарегистрироваться!</button>
+          </form>
+          <button class="modal__close" type="button" aria-label="Закрыть модальное окно">
+            <svg width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2Zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9l1.6 1.6-5.4 5.4 5.4 5.4-1.6 1.6Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__info">
+          <img src="./img/logo.svg" alt="Логотип Crypto" class="footer__logo" />
+          <nav class="footer__navigation navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Почему выбирают нас?</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Частые вопросы</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__copyright">
+          <p>&copy; Crypto, 2022</p>
+          <p><a href="https://t.me/Mrshmallowww" target="_blank">&#64;Mrshmallowww</a></p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
