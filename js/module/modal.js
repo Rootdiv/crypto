@@ -2,6 +2,9 @@ const heroBtn = document.querySelector('.hero__btn');
 const overlay = document.querySelector('.overlay');
 const modal = document.querySelector('.modal');
 
+overlay.style.transitionDuration = '0.36s';
+modal.style.transitionDuration = '0.36s';
+
 heroBtn.addEventListener('click', () => {
   overlay.classList.add('overlay_open');
   modal.classList.add('modal_open');
@@ -31,10 +34,11 @@ form.addEventListener('submit', event => {
   })
     .then(response => response.json())
     .then(person => {
-      modalTitle.textContent = `${person.name}, Ваша заявка успешно отправлена, номер: ${person.id}`;
       form.remove();
       setTimeout(() => {
-        location.href = location.href;
+        modalTitle.textContent = `${person.name}, Ваша заявка успешно отправлена, номер: ${person.id}`;
+        overlay.classList.remove('overlay_open');
+        modal.classList.remove('modal_open');
       }, 3000);
     });
 });
