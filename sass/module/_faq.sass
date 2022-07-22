@@ -1,0 +1,82 @@
+.faq
+  padding: 40px 0
+
+  &__title
+    font-weight: 700
+    font-size: 44px
+    line-height: 53px
+    color: #55c2ff
+    margin-bottom: 34px
+
+  &__item
+    border: 2px solid #265d77
+    border-radius: 20px
+    margin-bottom: 15px
+
+    @media (max-width: 480px)
+      border-radius: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+    &_show, &:hover
+      .faq__question
+        color: #55c2ff
+        &::after
+          background-image: url('../img/arrow-faq-show.svg')
+
+    &:not(&_show)
+      .faq__answer
+        display: none
+
+  &__question
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: space-between
+    gap: 5px
+    padding: 18px 33px
+    background-color: transparent
+    border: none
+    font-size: 26px
+    line-height: 31px
+    transition: color 0.36s ease-in-out
+
+    @media (max-width: 768px)
+      font-size: 18px
+      line-height: 22px
+
+    @media (max-width: 480px)
+      padding: 10px
+      font-size: 16px
+      line-height: 19px
+      text-align: left
+
+    &::after
+      content: ''
+      width: 28px
+      height: 18px
+      flex-shrink: 0
+      background-image: url('../img/arrow-faq.svg')
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: center
+      transition: background-image 0.36s ease-in-out
+
+      @media (max-width: 480px)
+        width: 18px
+        height: 12px
+
+  &__dropdown
+    padding: 0 100px 18px 33px
+    font-family: 'IBM Plex Sans'
+    font-weight: 300
+    font-size: 22px
+    line-height: 29px
+
+    @media (max-width: 768px)
+      font-size: 14px
+      line-height: 18px
+
+    @media (max-width: 480px)
+      padding: 0 10px 10px
