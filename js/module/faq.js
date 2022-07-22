@@ -37,12 +37,19 @@ const show = (elem, answer) => {
 
 export const accordion = () => {
   const list = document.querySelector('.faq__list');
+  const faqItems = list.querySelectorAll('.faq__item');
   list.addEventListener('click', event => {
     const button = event.target.closest('.faq__question');
-    const item = button.closest('.faq__item');
-    const answer = item.querySelector('.faq__answer');
     if (button) {
-      item.classList.contains('faq__item_show') ? hide(item, answer) : show(item, answer);
+      const item = button.closest('.faq__item');
+      faqItems.forEach(faqItem => {
+        const answer = faqItem.querySelector('.faq__answer');
+        if (item === faqItem) {
+          faqItem.classList.contains('faq__item_show') ? hide(faqItem, answer) : show(faqItem, answer);
+        } else {
+          hide(faqItem, answer);
+        }
+      });
     }
   });
 };
